@@ -11,7 +11,7 @@ Get stable version from npm:
 
 Get latest master:
 ```bash
-cordova plugin add https://github.com/rewireltd1/cordova-plugin-onfido
+cordova plugin add https://github.com/HealthyData/cordova-plugin-onfido
 ```
 
 ## Basic Usage

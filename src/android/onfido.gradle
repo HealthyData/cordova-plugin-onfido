@@ -1,5 +1,5 @@
-def sdkVersion = '12.3.1'
-def versionCodeNumber = 1230
+def sdkVersion = '11.2.0'
+def versionCodeNumber = 1120
 
 android {
     compileSdkVersion 30
@@ -10,7 +10,7 @@ android {
         versionName "$versionCode-sdk:$sdkVersion"
         multiDexEnabled true
     }
-
+	
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -19,16 +19,26 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+		ndk {
+			abiFilters "armeabi-v7a", "arm64-v8a"
+       
+			}
+		}
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+		ndk {
+			abiFilters "armeabi-v7a", "arm64-v8a"
+       
+			}
+		}
+		
     }
     
 }
 
 repositories {
+	jcenter()
     mavenCentral()
 }
 
